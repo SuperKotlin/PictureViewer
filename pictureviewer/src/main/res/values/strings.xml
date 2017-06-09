@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">pictureviewer</string>
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+</resources>
