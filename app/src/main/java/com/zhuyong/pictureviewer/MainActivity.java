@@ -45,6 +45,5 @@ public class MainActivity extends AppCompatActivity {
                 ImagePagerActivity.startActivity(MainActivity.this, config);
             }
         });
-
     }
 }
