@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pictureviewer/Pictureviewer.iml" filepath="$PROJECT_DIR$/pictureviewer/Pictureviewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PictureViewer/Pictureviewer.iml" filepath="$PROJECT_DIR$/PictureViewer/Pictureviewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/pictureviewer.iml" filepath="$PROJECT_DIR$/pictureviewer.iml" />
     </modules>
