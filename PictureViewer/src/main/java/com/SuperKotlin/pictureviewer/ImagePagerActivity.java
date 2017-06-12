@@ -11,8 +11,6 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.pictureviewer.R;
-
 import java.util.List;
 
 /**
