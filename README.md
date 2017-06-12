@@ -30,11 +30,25 @@
 
 ##如何添加依赖库:
 
+ - **Add it in your root build.gradle at the end of repositories:**
+
 ```
-dependencies {
-        compile 'com.github.SuperKotlin:PictureViewer:1.0'
-}
-	
+	    allprojects {
+		   repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	    }
 ```
+
+
+ -  **Add the dependency**
+```
+	dependencies {
+	         compile 'com.github.SuperKotlin:PictureViewer:v1.0'
+	}
+```
+
+
 ##或者可以下载`Demo`提取`module`添加
 
