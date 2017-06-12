@@ -1,4 +1,4 @@
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
 import android.graphics.RectF;
 import android.view.GestureDetector;

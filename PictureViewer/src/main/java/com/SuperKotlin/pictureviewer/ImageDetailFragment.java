@@ -1,4 +1,4 @@
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.pictureviewer.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

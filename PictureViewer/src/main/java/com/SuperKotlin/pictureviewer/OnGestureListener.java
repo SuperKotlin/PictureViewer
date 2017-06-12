@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
-import android.util.Log;
+public interface OnGestureListener {
 
-/**
- * class that holds the {@link Logger} for this library, defaults to {@link LoggerDefault} to send logs to android {@link Log}
- */
-public final class LogManager {
+    public void onDrag(float dx, float dy);
 
-    private static Logger logger = new LoggerDefault();
+    public void onFling(float startX, float startY, float velocityX,
+                        float velocityY);
 
-    public static void setLogger(Logger newLogger) {
-        logger = newLogger;
-    }
-
-    public static Logger getLogger() {
-        return logger;
-    }
+    public void onScale(float scaleFactor, float focusX, float focusY);
 
 }

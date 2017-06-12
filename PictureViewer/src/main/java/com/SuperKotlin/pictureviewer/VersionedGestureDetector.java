@@ -1,4 +1,4 @@
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
 /*******************************************************************************
  * Copyright 2011, 2012 Chris Banes.

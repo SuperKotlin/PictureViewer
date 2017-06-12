@@ -1,10 +1,8 @@
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +11,8 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.pictureviewer.R;
+
 import java.util.List;
 
 /**

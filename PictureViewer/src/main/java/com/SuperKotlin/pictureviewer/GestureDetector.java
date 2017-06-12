@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
-public interface OnGestureListener {
+import android.view.MotionEvent;
 
-    public void onDrag(float dx, float dy);
+public interface GestureDetector {
 
-    public void onFling(float startX, float startY, float velocityX,
-                        float velocityY);
+    public boolean onTouchEvent(MotionEvent ev);
 
-    public void onScale(float scaleFactor, float focusX, float focusY);
+    public boolean isScaling();
+
+    public void setOnGestureListener(OnGestureListener listener);
 
 }

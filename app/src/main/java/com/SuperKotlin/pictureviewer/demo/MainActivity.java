@@ -1,11 +1,12 @@
-package com.zhuyong.pictureviewer;
+package com.SuperKotlin.pictureviewer.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.pictureviewer.ImagePagerActivity;
-import com.pictureviewer.PictureConfig;
+import com.SuperKotlin.pictureviewer.ImagePagerActivity;
+import com.SuperKotlin.pictureviewer.PictureConfig;
+import com.SuperKotlin.pictureviewer.R;
 
 import java.util.ArrayList;
 import java.util.List;

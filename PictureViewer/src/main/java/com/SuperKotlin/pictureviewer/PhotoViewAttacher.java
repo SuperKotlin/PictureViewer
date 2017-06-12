@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package com.pictureviewer;
+package com.SuperKotlin.pictureviewer;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -118,7 +118,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
 
     // Gesture Detectors
     private GestureDetector mGestureDetector;
-    private com.pictureviewer.GestureDetector mScaleDragDetector;
+    private com.SuperKotlin.pictureviewer.GestureDetector mScaleDragDetector;
 
     // These are set so we don't keep allocating them on the heap
     private final Matrix mBaseMatrix = new Matrix();
