@@ -45,7 +45,7 @@
  -  **Add the dependency**
 ```
 	dependencies {
-	         compile 'com.github.SuperKotlin:PictureViewer:v1.0'
+	         compile 'com.github.SuperKotlin:PictureViewer:1.1'
 	}
 ```
 
