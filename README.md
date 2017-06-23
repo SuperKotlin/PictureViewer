@@ -52,3 +52,6 @@
 
 ##或者可以下载`Demo`提取`module`添加
 
+### 关于我
+ - 我的简书：[BraveJoy](http://www.jianshu.com/users/c96d2a9d160f/timeline)
+ - 我的github：[SuperKotlin](https://github.com/SuperKotlin)
