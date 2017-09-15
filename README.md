@@ -47,10 +47,13 @@
 ```
 	dependencies {
 	         compile 'com.github.SuperKotlin:PictureViewer:1.0.1'
-
-
-	         compile 'com.github.SuperKotlin:PictureViewer:1.0.2'//增加本地图片加载功能
 	}
+
+	dependencies {
+			 //增加本地图片加载功能
+	         compile 'com.github.SuperKotlin:PictureViewer:1.0.2'
+	}
+
 ```
 
 
