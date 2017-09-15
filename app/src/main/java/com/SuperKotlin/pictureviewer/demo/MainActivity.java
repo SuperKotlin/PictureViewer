@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PictureConfig config = new PictureConfig.Builder()
                         .setListData((ArrayList<String>) list)//图片数据List<String> list
-                        .setmIsLoaclPicture(true)
+                        .setmIsLoaclPicture(true)//是否是本地图片
                         .setPosition(0)//图片下标（从第position张图片开始浏览）
                         .setDownloadPath("pictureviewer")//图片下载文件夹地址
                         .needDownload(true)//是否支持图片下载
