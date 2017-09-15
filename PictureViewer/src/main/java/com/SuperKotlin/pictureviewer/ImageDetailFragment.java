@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,12 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
+import java.io.File;
+
 public class ImageDetailFragment extends Fragment {
     public static int mImageLoading;//占位符图片
     public static boolean mNeedDownload = false;//默认不支持下载
+    public static boolean mIsLoaclPicture = false;//是否是本地文件，如果为true则加载的时候new File
     private String mImageUrl;
     private ImageView mImageView;
     private PhotoViewAttacher mAttacher;
@@ -82,26 +86,48 @@ public class ImageDetailFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Picasso.with(getActivity()).load(mImageUrl)
-                .into(new Target() {
-                    @Override
-                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                        mBitmap = bitmap;
-                        mImageView.setImageBitmap(mBitmap);
-                        mAttacher.update();
+        if (mIsLoaclPicture) {
+            Picasso.with(getActivity()).load(new File(mImageUrl))
+                    .into(new Target() {
+                        @Override
+                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                            mBitmap = bitmap;
+                            mImageView.setImageBitmap(mBitmap);
+                            mAttacher.update();
 
-                    }
+                        }
 
-                    @Override
-                    public void onBitmapFailed(Drawable errorDrawable) {
-                        mImageView.setImageResource(mImageLoading);
-                    }
+                        @Override
+                        public void onBitmapFailed(Drawable errorDrawable) {
+                            mImageView.setImageResource(mImageLoading);
+                        }
 
-                    @Override
-                    public void onPrepareLoad(Drawable placeHolderDrawable) {
-                        mImageView.setImageResource(mImageLoading);
-                    }
-                });
+                        @Override
+                        public void onPrepareLoad(Drawable placeHolderDrawable) {
+                            mImageView.setImageResource(mImageLoading);
+                        }
+                    });
+        } else {
+            Picasso.with(getActivity()).load(mImageUrl)
+                    .into(new Target() {
+                        @Override
+                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                            mBitmap = bitmap;
+                            mImageView.setImageBitmap(mBitmap);
+                            mAttacher.update();
 
+                        }
+
+                        @Override
+                        public void onBitmapFailed(Drawable errorDrawable) {
+                            mImageView.setImageResource(mImageLoading);
+                        }
+
+                        @Override
+                        public void onPrepareLoad(Drawable placeHolderDrawable) {
+                            mImageView.setImageResource(mImageLoading);
+                        }
+                    });
+        }
     }
 }

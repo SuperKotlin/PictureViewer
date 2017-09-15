@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PictureViewer/PictureViewer.iml" filepath="$PROJECT_DIR$/PictureViewer/PictureViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PictureViewer.iml" filepath="$PROJECT_DIR$/PictureViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PictureViewer/PictureViewer-PictureViewer.iml" filepath="$PROJECT_DIR$/PictureViewer/PictureViewer-PictureViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pictureviewer.iml" filepath="$PROJECT_DIR$/pictureviewer.iml" />
     </modules>
   </component>
 </project>

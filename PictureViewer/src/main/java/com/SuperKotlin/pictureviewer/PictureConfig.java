@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class PictureConfig {
     public static boolean needDownload = false;
+    public static boolean mIsLoaclPicture = false;
     public static String path = "pictureviewer";
     public static int resId = 0;//占位符资源图片
     public static int position = 0;//下标
@@ -18,6 +19,7 @@ public class PictureConfig {
 
     public PictureConfig(Builder builder) {
         this.needDownload = builder.needDownload;
+        this.mIsLoaclPicture = builder.mIsLoaclPicture;
         this.path = builder.path;
         this.resId = builder.resId;
         this.position = builder.position;
@@ -27,6 +29,7 @@ public class PictureConfig {
     public static class Builder implements Serializable {
 
         private boolean needDownload = false;
+        private boolean mIsLoaclPicture = false;
         private int resId = 0;
         private String path = "pictureviewer";
         private int position = 0;
@@ -48,6 +51,11 @@ public class PictureConfig {
 
         public Builder needDownload(boolean needDownload) {
             this.needDownload = needDownload;
+            return this;
+        }
+
+        public Builder setmIsLoaclPicture(boolean mIsLoaclPicture) {
+            this.mIsLoaclPicture = mIsLoaclPicture;
             return this;
         }
 

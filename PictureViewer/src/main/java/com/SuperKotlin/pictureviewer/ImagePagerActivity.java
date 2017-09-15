@@ -130,6 +130,7 @@ public class ImagePagerActivity extends FragmentActivity {
         intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, config.position);
         ImageDetailFragment.mImageLoading = config.resId;
         ImageDetailFragment.mNeedDownload = config.needDownload;
+        ImageDetailFragment.mIsLoaclPicture = config.mIsLoaclPicture;
         ImageUtil.path = config.path;
         context.startActivity(intent);
     }
