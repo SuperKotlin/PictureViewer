@@ -20,7 +20,6 @@
 	//使用方式
       PictureConfig config = new PictureConfig.Builder()
                .setListData((ArrayList<String>) list)	//图片数据List<String> list
-               .setmIsLoaclPicture(false)//是否是本地图片
                .setPosition(0)	//图片下标（从第position张图片开始浏览）
                .setDownloadPath("pictureviewer")	//图片下载文件夹地址
                .needDownload(true)	//是否支持图片下载
@@ -49,19 +48,8 @@
 	         compile 'com.github.SuperKotlin:PictureViewer:1.0.1'
 	}
 
-	dependencies {
-			 //增加本地图片加载功能
-	         compile 'com.github.SuperKotlin:PictureViewer:1.0.2'
-	}
-
 ```
 
-
-#版本更新：
-## #版本： 1.0.2
-新增加载本地图的功能，增加setmIsLoaclPicture方法，如果为true则是本地，否则是网络图片。
-## #版本： 1.0.1
-基础功能。
 
 ##或者可以下载`Demo`提取`module`添加
 
