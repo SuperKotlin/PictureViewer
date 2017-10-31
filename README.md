@@ -1,4 +1,4 @@
-##效果演示:
+## 效果演示:
 
 ![](/art/PictureViewer.gif)
 
@@ -47,7 +47,7 @@
 ```
 	dependencies {
 
-	         compile 'com.github.SuperKotlin:PictureViewer:1.0.2'  //新版本
+	         compile 'com.github.SuperKotlin:PictureViewer:2.0.1'  //新版本
 
 	         compile 'com.github.SuperKotlin:PictureViewer:1.0.1'	
 
@@ -59,7 +59,7 @@
 ## 或者可以下载`Demo`提取`module`添加
 
 # 更新记录:
-## 版本1.0.2
+## 版本2.0.1
  - 新增自定义数字下标显示和隐藏设置；
 
  - 图片加载框架由Picasso更换为Glide，支持对本地图片文件的加载，并且全部支持图片下载功能；
