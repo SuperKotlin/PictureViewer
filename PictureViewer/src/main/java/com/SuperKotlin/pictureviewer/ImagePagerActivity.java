@@ -101,16 +101,6 @@ public class ImagePagerActivity extends FragmentActivity {
 
     }
 
-    /**
-     * 注意事项！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-     * <p>
-     * 本library中使用的图片加载框架是Picasso，如果你的主项目中也使用了Picasso请移除
-     * ，使用本library中的即可，否则会报jar异常，或者可以下载本library替换加载框架也可以。
-     *
-     * @param context
-     * @param config
-     */
-
     public static void startActivity(Context context, PictureConfig config) {
         Intent intent = new Intent(context, ImagePagerActivity.class);
         intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_URLS, config.list);
