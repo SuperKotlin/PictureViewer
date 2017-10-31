@@ -4,8 +4,8 @@
 
 ## 如何使用:
 
-		//这是你的数据
-      	List<String> list = new ArrayList<>();
+        //这是你的数据
+        List<String> list = new ArrayList<>();
         //网络图片
         list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgepc1lpvfj20u011i0wv.jpg");
         list.add("https://ws1.sinaimg.cn/large/610dc034ly1fgdmpxi7erj20qy0qyjtr.jpg");
