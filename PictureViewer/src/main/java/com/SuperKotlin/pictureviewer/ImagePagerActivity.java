@@ -2,12 +2,14 @@ package com.SuperKotlin.pictureviewer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -26,11 +28,14 @@ public class ImagePagerActivity extends FragmentActivity {
     private HackyViewPager mPager;
     private int pagerPosition;
     private TextView indicator;
+    private static boolean mIsShowNumber = true;//是否显示数字下标
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        full(true);//设置沉浸
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS); //透明状态栏
+        }
         setContentView(R.layout.activity_image_detail_pager);
         pagerPosition = getIntent().getIntExtra(EXTRA_IMAGE_INDEX, 0);
         List<String> urls = getIntent().getStringArrayListExtra(EXTRA_IMAGE_URLS);
@@ -66,7 +71,7 @@ public class ImagePagerActivity extends FragmentActivity {
         }
 
         mPager.setCurrentItem(pagerPosition);
-
+        indicator.setVisibility(mIsShowNumber ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -97,29 +102,11 @@ public class ImagePagerActivity extends FragmentActivity {
     }
 
     /**
-     * 实现对状态栏的控制
-     *
-     * @param enable
-     */
-    private void full(boolean enable) {
-        if (enable) {
-            WindowManager.LayoutParams mLp = getWindow().getAttributes();
-            mLp.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
-            getWindow().setAttributes(mLp);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        } else {
-            WindowManager.LayoutParams mAttr = getWindow().getAttributes();
-            mAttr.flags &= (~WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            getWindow().setAttributes(mAttr);
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-    }
-
-    /**
      * 注意事项！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-     *
+     * <p>
      * 本library中使用的图片加载框架是Picasso，如果你的主项目中也使用了Picasso请移除
      * ，使用本library中的即可，否则会报jar异常，或者可以下载本library替换加载框架也可以。
+     *
      * @param context
      * @param config
      */
@@ -130,7 +117,7 @@ public class ImagePagerActivity extends FragmentActivity {
         intent.putExtra(ImagePagerActivity.EXTRA_IMAGE_INDEX, config.position);
         ImageDetailFragment.mImageLoading = config.resId;
         ImageDetailFragment.mNeedDownload = config.needDownload;
-        ImageDetailFragment.mIsLoaclPicture = config.mIsLoaclPicture;
+        mIsShowNumber = config.mIsShowNumber;
         ImageUtil.path = config.path;
         context.startActivity(intent);
     }

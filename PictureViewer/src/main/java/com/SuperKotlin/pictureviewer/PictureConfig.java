@@ -10,16 +10,16 @@ import java.util.ArrayList;
  */
 
 public class PictureConfig {
+    public static boolean mIsShowNumber = true;//是否显示数字下标
     public static boolean needDownload = false;
-    public static boolean mIsLoaclPicture = false;
     public static String path = "pictureviewer";
     public static int resId = 0;//占位符资源图片
     public static int position = 0;//下标
     public static ArrayList<String> list;
 
     public PictureConfig(Builder builder) {
+        this.mIsShowNumber = builder.mIsShowNumber;
         this.needDownload = builder.needDownload;
-        this.mIsLoaclPicture = builder.mIsLoaclPicture;
         this.path = builder.path;
         this.resId = builder.resId;
         this.position = builder.position;
@@ -28,8 +28,8 @@ public class PictureConfig {
 
     public static class Builder implements Serializable {
 
+        private boolean mIsShowNumber = true;//是否显示数字下标
         private boolean needDownload = false;
-        private boolean mIsLoaclPicture = false;
         private int resId = 0;
         private String path = "pictureviewer";
         private int position = 0;
@@ -49,13 +49,13 @@ public class PictureConfig {
             return this;
         }
 
-        public Builder needDownload(boolean needDownload) {
-            this.needDownload = needDownload;
+        public Builder setIsShowNumber(boolean mIsShowNumber) {
+            this.mIsShowNumber = mIsShowNumber;
             return this;
         }
 
-        public Builder setmIsLoaclPicture(boolean mIsLoaclPicture) {
-            this.mIsLoaclPicture = mIsLoaclPicture;
+        public Builder needDownload(boolean needDownload) {
+            this.needDownload = needDownload;
             return this;
         }
 
